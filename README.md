@@ -2,7 +2,7 @@
 
 # Installation
 
-    git clone http://github.com/zjrosen1/vim.git ~/.vim
+    git clone http://github.com/visualbam/vim.git ~/.vim
     cd ~/.vim
     ./install.sh
 
