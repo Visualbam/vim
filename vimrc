@@ -45,8 +45,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'evidens/vim-twig'
 Plugin 'rking/ag.vim'
-"Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
 
 " vim-scripts
 Plugin 'Tabular'
