@@ -45,7 +45,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'evidens/vim-twig'
 Plugin 'rking/ag.vim'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 
 " vim-scripts
 Plugin 'Tabular'
@@ -96,9 +97,11 @@ set laststatus=2                      " Always show the statusline
 set t_Co=256                          " Explicitly tell Vim that the terminal supports 256 colors
 
 " Indent lines
-let g:indentLine_color_term = 239
+let g:indentLine_color_term = 235
 let g:indentLine_char = '|'
 let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4
 
 " Colors and Theme {{{2
 set background=dark
