@@ -16,7 +16,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Github
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
@@ -34,6 +33,10 @@ Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'groenewege/vim-less'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'Yggdroot/indentLine'
 
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -74,10 +77,10 @@ set smartcase                         " Try and be smart about cases
 nnoremap j gj
 nnoremap k gk
 " Appearance {{{2
-" set number                          " Always show line numbers
+set number                          " Always show line numbers
 set numberwidth=3                     " Changed the width of line number columns
 set listchars=tab:\|\ ,trail:·,eol:¬  " Use new symbols for tabstops and EOLs
-set ts=2 sts=2 sw=2 noexpandtab       " Default tab stops
+set ts=4 sts=4 sw=4 noexpandtab       " Default tab stops
 set backspace=indent,eol,start
 set showcmd                           " Shows incomplete command
 set novb noeb                         " Turn off visual bell and remove error beeps
@@ -91,9 +94,15 @@ set encoding=utf-8
 set cursorline                        " Highlight current line
 set laststatus=2                      " Always show the statusline
 set t_Co=256                          " Explicitly tell Vim that the terminal supports 256 colors
+
+" Indent lines
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+let g:indentLine_leadingSpaceChar = '·'
+
 " Colors and Theme {{{2
 set background=dark
-colorscheme badwolf
+colorscheme molokai
 " [ Auto Commands ] {{{1
 " Auto source vimrc on save {{{2
 augroup reload_vimrc " {
