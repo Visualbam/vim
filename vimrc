@@ -19,6 +19,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Github
 Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-endwise'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-surround'
@@ -30,7 +32,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'emmetio/emmet'
+Plugin 'mattn/emmet-vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'groenewege/vim-less'
@@ -94,11 +96,11 @@ let g:indentLine_color_term = 235
 let g:indentLine_char = '|'
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4
+set tabstop=4 softtabstop=4 expandtab shiftwidth=4
 
 " Colors and Theme {{{2
 set background=dark
-colorscheme badwolf 
+colorscheme monokai
 
 " Save on losing focus {{{2
 au FocusLost * :wa
@@ -125,11 +127,31 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
+" Bubble single lines {{{2
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 " Window Resizing {{{2
 nnoremap <Left> :vertical resize +1<CR>
 nnoremap <Right> :vertical resize -1<CR>
 nnoremap <Up> :resize +1<CR>
 nnoremap <Down> :resize -1<CR>
+
+" Insert Movement {{{2
+imap <C-e> <C-o>$
+imap <C-a> <C-o>0
+imap <C-f> <C-o>l
+imap <C-b> <C-o>h
+
+" Indent Mapping {{{2
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-[> >gv
 
 " Awesome fucking pasting {{{2
 function! WrapForTmux(s)
@@ -145,12 +167,6 @@ endfunction
 
 " Toggle Spell Checking -- s {{{2
 nmap <silent> <leader>s :set spell!<CR>
-
-" Surround selection with "
-nmap <leader>" viwS"
-
-" Surround selection with '
-nmap <leader>' viwS'
 
 " Emmet {{{2"
 let g:user_emmet_leader_key = '<c-e>'
