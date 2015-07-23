@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Github
 Plugin 'tpope/vim-fugitive'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-endwise'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -27,7 +28,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'ervandew/supertab'
@@ -42,6 +43,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jimmyhchan/dustjs.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'Shutnik/jshint2.vim'
 " Plugin 'tommcdo/vim-exchange'
 " Plugin 'terryma/vim-multiple-cursors'
 
@@ -101,6 +103,9 @@ set tabstop=4 softtabstop=4 expandtab shiftwidth=4
 " Colors and Theme {{{2
 set background=dark
 colorscheme monokai
+
+" Run JSHint on save
+autocmd! BufWritePost *.js JSHint
 
 " Save on losing focus {{{2
 au FocusLost * :wa
